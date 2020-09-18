@@ -5,14 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/template-web.js"></script>
 </head>
 
 <body>
     <div class="box">
-        <p>大雪纷飞</p>
-        <p>水调歌头</p>
-        <p>明月几时有,把酒问青天,不知天上宫阙,今夕是何年,我欲乘风归去,又恐琼楼宇,高处不胜寒,起舞弄清影,何似在人间,专诸年,底绮户,......</p>
+        <div class="search">
+            <input type="text" class="txt">
+            <input type="button" value="搜索" class="search_btn">
+        </div>
+        <h1 class="header">唐诗宋词•佳作赏析</h1>
+        <p class="eaditor">苏轼</p>
+        <h3 class="name">水调歌头</h3>
+        <div class="contener">明月几时有,把酒问青天,不知天上宫阙,今夕是何年,我欲乘风归去,又恐琼楼宇,高处不胜寒,起舞弄清影,何似在人间,专诸年,底绮户,......</div>
+        <div class="shangxi">
+            <p class="head">
+                赏析:
+            </p>
+        </div>
+        <div id="btn">
+            <button id="up">上一篇</button>
+            <button id="next">下一篇</button>
+        </div>
     </div>
 </body>
+<script>
+    $.ajax({
+        url: 'http://api.getlove.cn/api/poetry',
+        type: 'post',
+        dataType: 'json',
+        success: function (backData) {
+            console.log(backData);
+        }
+    })
+</script>
 
 </html>
